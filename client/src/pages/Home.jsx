@@ -38,7 +38,7 @@ const Home = () => {
     const fetchListings = async () => {
       setLoading(true);
       try {
-        const res = await axios.get(`http://localhost:5000/api/listings?category=${activeCat}`);
+        const res = await axios.get(`https://dreamstay-2jev.onrender.com/api/listings?category=${activeCat}`);
         setListings(res.data);
         setLoading(false);
       } catch (error) {
@@ -56,7 +56,7 @@ const Home = () => {
     if (!user) return toast.error("Please login first to save this property.");
     
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/wishlist', 
+      const res = await axios.post('https://dreamstay-2jev.onrender.com/api/auth/wishlist', 
         { listingId: id }, 
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -23,7 +23,7 @@ const ListingDetails = () => {
   useEffect(() => {
     const fetchListing = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/listings/${id}`);
+        const res = await axios.get(`https://dreamstay-2jev.onrender.com/api/listings/${id}`);
         setListing(res.data);
         setLoading(false);
       } catch (error) {
@@ -53,7 +53,7 @@ const ListingDetails = () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     try {
-      await axios.post('http://localhost:5000/api/bookings', {
+      await axios.post('https://dreamstay-2jev.onrender.com/api/bookings', {
         listingId: listing._id,
         checkIn,
         checkOut

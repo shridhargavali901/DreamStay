@@ -22,12 +22,12 @@ const Profile = () => {
 
     const fetchData = async () => {
       try {
-        const savedRes = await axios.get('http://localhost:5000/api/auth/wishlist', {
+        const savedRes = await axios.get('https://dreamstay-2jev.onrender.com/api/auth/wishlist', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setSavedListings(savedRes.data);
 
-        const bookingsRes = await axios.get('http://localhost:5000/api/bookings', {
+        const bookingsRes = await axios.get('https://dreamstay-2jev.onrender.com/api/bookings', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setBookings(bookingsRes.data);
@@ -50,7 +50,7 @@ const Profile = () => {
     e.preventDefault();
     e.stopPropagation(); 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/wishlist', 
+      const res = await axios.post('https://dreamstay-2jev.onrender.com/api/auth/wishlist', 
         { listingId: id }, 
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -68,7 +68,7 @@ const Profile = () => {
     if (!window.confirm("Are you sure you want to cancel this reservation?")) return;
     
     try {
-      await axios.delete(`http://localhost:5000/api/bookings/${id}`, {
+      await axios.delete(`https://dreamstay-2jev.onrender.com/api/bookings/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       // Screen se booking ko turant hatao
