@@ -1,0 +1,27 @@
+﻿@import "tailwindcss";
+
+body {
+  background-color: #FAF9F6; /* Matte White Background */
+  color: #1A1A1A;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Minimalist Grey Borders */
+.border-thin {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card-frame {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card-frame:hover {
+  border-color: rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
